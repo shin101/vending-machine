@@ -1,24 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Routes,Route} from 'react-router-dom'
+import Navbar from './Navbar';
+import VendingMachine from './VendingMachine';
+import Pocky from './Pocky';
+import OiOcha from './OiOcha';
+import Ramen from './Ramen';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <BrowserRouter>
+      <Navbar/>
+        <Route exact path='/'>
+          <VendingMachine/> 
+
+        </Route>
+
+        <Route exact path='/pocky'>
+          <Pocky/>
+        </Route>
+
+        <Route exact path='/oiocha'>
+          <OiOcha/>
+        </Route>
+
+        <Route exact path='/ramen'>
+          <Ramen/>
+        </Route>
+
+
+      </BrowserRouter>
+  </main>
   );
 }
 
