@@ -8,30 +8,43 @@ import Ramen from './Ramen';
 
 function App() {
   return (
-    <main className="App">
+    <div>
       <BrowserRouter>
-      <Navbar/>
-        <Route exact path='/'>
-          <VendingMachine/> 
+        <Navbar/>
+          <Routes>
+          <Route exact path="/" element={<VendingMachine />} />
+        </Routes>
+          <Routes>
 
-        </Route>
+          <Route exact path="/pocky" element={<Pocky />} />
+        </Routes>
+          <Routes>
 
-        <Route exact path='/pocky'>
-          <Pocky/>
-        </Route>
+          <Route exact path="/OiOcha" element={<OiOcha />} />
+        </Routes>
+          <Routes>
 
-        <Route exact path='/oiocha'>
-          <OiOcha/>
-        </Route>
-
-        <Route exact path='/ramen'>
-          <Ramen/>
-        </Route>
-
-
-      </BrowserRouter>
-  </main>
+          <Route exact path="/Ramen" element={<Ramen />} />
+        </Routes>
+    </BrowserRouter>
+    </div>
   );
 }
 
 export default App;
+
+
+        {/* // <Route exact path='/pocky'>
+        //   <Pocky/>
+        // </Route>
+
+        // <Route exact path='/oiocha'>
+        //   <OiOcha/>
+        // </Route>
+
+        // <Route exact path='/ramen'>
+        //   <Ramen/>
+        // </Route>
+       </Routes>
+       </Router>
+      </BrowserRouter> */}
